@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>DNA Cold Storage - Investeerders Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #0f172a; color: #ffffff; text-align: center; padding: 50px; }
+        .card { background: #1e293b; padding: 30px; border-radius: 12px; max-width: 500px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        input { padding: 10px; width: 80%; border-radius: 6px; border: none; margin-top: 10px; font-size: 16px; }
+        .result { margin-top: 20px; font-size: 18px; color: #38bdf8; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>DNA Databestand Calculator</h1>
+        <p>Bereken hoeveel fysieke ruimte je bespaart met biologische cold storage.</p>
+        
+        <label for="gb">Hoeveel Gigabyte aan data wil je opslaan?</label><br>
+        <input type="number" id="gb" value="1000" oninput="bereken()">
+        
+        <div class="result" id="output">Dit past in een druppel DNA ter grootte van een zandkorrel!</div>
+    </div>
+
+    <script>
+        function bereken() {
+            let gb = document.getElementById('gb').value;
+            let druppels = (gb / 1000000).toFixed(4);
+            document.getElementById('output').innerHTML = "Jouw " + gb + " GB aan data past in slechts " + druppels + " druppels DNA!";
+        }
+    </script>
+</body>
+</html>
